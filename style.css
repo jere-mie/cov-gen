@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Calibri, 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+}
+
+input[type="text"]{
+    padding: 6px 10px;
+    font-size: 1.3rem;
+    width: 300px;
+}
+.noprint{
+    padding: 3rem 10rem;
+    background-color: aliceblue;
+}
+
+.noprint h1{
+    font-size: 3rem;
+}
+textarea{
+    padding: 5px;    
+}
+#clform{
+    padding: 20px;
+    background-color: rgba(255, 235, 205, 0.24);
+}
+
+.hidden{
+    display: none;
+}
+
+@media print{
+    .noprint{
+        display: none;
+    }
+}

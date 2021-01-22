@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://css.bornais.ca/css/bornais.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container" style="margin-top: 3rem;">
+        <h1 class="thin" style="font-size: 3rem;">Please Input Your Data Below</h1>
+        <h1 class="thin">NOTE: None of this data ever touches our servers. It is only saved on your local device.</h1>
+        <h1 class="thin">Don't believe me? Inspect the code yourself ;)</h1>
+        <br>
+        <form id="contentform" onsubmit="signin(); return false">
+            <input id="myName" type="text" placeholder="Full Name" required>
+            <input id="myEmail" type="text" placeholder="Email" required>
+            <input id="myAddress" type="text" placeholder="FULL Address" required>
+            <input id="myPhone" type="text" placeholder="Phone Number" required>
+            <input id="myGitHub" type="text" placeholder="GitHub">
+            <h1 class="thin">Cover Letter Contents. Note: Do not include the salutation, header, signature, etc. JUST THE CONTENT!!</h3>        
+            <h2 class="thin">Put in {{job}} for places where the job should show up, and {{company}} for places where the company should show up.</h4>
+            <h3 class="thin">Example: "I am happy to apply to {{job}} and think I would be a good fit at {{company}}"</h5>
+            <textarea name="cltext" id="cltext" cols="80" rows="15" style="font-size: 1.3rem;"></textarea>
+            <br><button type="submit" class="bbtn bbtn-azure">Submit</button>
+        </form>    
+    </div>
+    <script>
+        document.querySelector('#myName').value = localStorage.getItem("myName");
+        document.querySelector('#myEmail').value = localStorage.getItem("myEmail");
+        document.querySelector('#myAddress').value = localStorage.getItem("myAddress");
+        document.querySelector('#myPhone').value = localStorage.getItem("myPhone");
+        document.querySelector('#myGitHub').value = localStorage.getItem("myGitHub");
+        document.querySelector('#cltext').value = localStorage.getItem("cltext");
+
+
+        function signin(){
+            localStorage.setItem("myName", document.querySelector('#myName').value);
+            localStorage.setItem("myEmail", document.querySelector('#myEmail').value);
+            localStorage.setItem("myAddress", document.querySelector('#myAddress').value);
+            localStorage.setItem("myPhone", document.querySelector('#myPhone').value);
+            localStorage.setItem("myGitHub", document.querySelector('#myGitHub').value);
+            localStorage.setItem("cltext", document.querySelector('#cltext').value);
+            document.location.href = "index.html";
+        }
+    </script>
+    <script src="script.js"></script>    
+</body>
+</html>
