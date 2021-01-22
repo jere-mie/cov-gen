@@ -16,21 +16,16 @@
 <body>
     <div class="noprint">
         <h1 class="thin">Cover Letter Creator</h1>
-        <form id="clform" onsubmit="submitclcontent(); return false" class="hidden">
-            <h2 class="thin">Enter Cover Letter Contents Here</h1>
-            <h2 class="thin">Remember put {{job}} where you want the job to show up and {{company}} where you want the company to show up</h2>
-            <textarea name="clcontent" id="clcontent" cols="80" rows="15" style="font-size: 1.3rem;"></textarea>
-            <br>
-            <button type="submit" class="bbtn bbtn-azure">Submit</button>
-        </form>
-        <button class="bbtn bbtn-cash" onclick="document.location.href = 'signin.html';">Edit Cover Letter Content</button>
-        <!-- <button class="bbtn bbtn-cash" onclick="editclcontent();">Edit Cover Letter Content</button> -->
+        <hr><br>
+        <button class="bbtn bbtn-cash" onclick="document.location.href = 'signin.html';">Edit Cover Letter</button>
         <button class="bbtn bbtn-ruby" onclick="localStorage.clear(); document.location.href = 'signin.html'">Clear ALL Data</button>
         <br><br>
         <form onsubmit="generate(); return false">
             <input type="text" placeholder="Company" id="company" required>
             <input type="text" placeholder="Job Title" id="job" required>
             <input type="text" placeholder="Recruiter Name" id="name">
+            <br>
+            <br>
             <button class="bbtn bbtn-azure" type="submit">Generate</button>
         </form>        
     </div>
@@ -54,9 +49,10 @@
         <p>Sincerely,</p>
         <br>
         <p id="myName2"></p>
-
     </div>
+
     <script>
+        // this page should only be available to people who first put in their info
         if(localStorage.getItem('myName')==null){
             document.location.href = "signin.html";
         }

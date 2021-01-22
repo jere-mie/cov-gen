@@ -1,13 +1,3 @@
-function editclcontent(){
-    document.getElementById('clform').classList.remove('hidden');
-    document.getElementById('clcontent').value = localStorage.getItem('cltext');
-}
-
-function submitclcontent(){
-    localStorage.setItem('cltext', document.getElementById('clcontent').value);
-    document.getElementById('clform').classList.add('hidden');
-}
-
 function generate(){
     // getting localStorage
     let myName = localStorage.getItem("myName");
