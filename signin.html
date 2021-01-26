@@ -20,6 +20,7 @@
             <input id="myAddress" type="text" placeholder="FULL Address" required>
             <input id="myPhone" type="text" placeholder="Phone Number" required>
             <input id="myGitHub" type="text" placeholder="GitHub">
+            <input id="mySig" type="text" placeholder="Signature Image Link">
             <br><br>
             <h1 class="thin spaced">Cover Letter Contents</h1>        
             <h2 class="thin spaced">Put in {{job}} where the job title should show up, and {{company}} where the company should show up.</h4>
@@ -36,6 +37,7 @@
         document.querySelector('#myAddress').value = localStorage.getItem("myAddress");
         document.querySelector('#myPhone').value = localStorage.getItem("myPhone");
         document.querySelector('#myGitHub').value = localStorage.getItem("myGitHub");
+        document.querySelector('#mySig').value = localStorage.getItem("mySig");
         document.querySelector('#cltext').value = localStorage.getItem("cltext");
 
 
@@ -45,6 +47,7 @@
             localStorage.setItem("myAddress", document.querySelector('#myAddress').value);
             localStorage.setItem("myPhone", document.querySelector('#myPhone').value);
             localStorage.setItem("myGitHub", document.querySelector('#myGitHub').value);
+            localStorage.setItem("mySig", document.querySelector('#mySig').value);
             localStorage.setItem("cltext", document.querySelector('#cltext').value);
             document.location.href = "index.html";
         }

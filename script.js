@@ -1,17 +1,34 @@
 function generate(){
+
+
     // getting localStorage
     let myName = localStorage.getItem("myName");
     let myEmail = localStorage.getItem("myEmail");
     let myAddress = localStorage.getItem("myAddress");
     let myPhone = localStorage.getItem("myPhone");
     let myGitHub = localStorage.getItem("myGitHub");
+    let mySig = localStorage.getItem("mySig");
     let cltext = localStorage.getItem("cltext");
+
+    // adding in signature
+    let imgarea = document.getElementById("imgarea");
+    imgarea.innerHTML = "";
+    if(mySig!=null && mySig!=""){
+        let sig = document.createElement("img");
+        sig.setAttribute("src", mySig);
+        sig.setAttribute("width", "200px");
+        imgarea.appendChild(sig);
+        imgarea.appendChild(document.createElement("br"));
+    }
+
+
 
     // putting together email, phone, github into one line
     let myInfo = myEmail + " • " + myPhone;
     if(myGitHub!=null){
         myInfo += " • " + myGitHub;
     }
+
     // setting header information
     document.querySelector("#myName").innerText = myName.toUpperCase();
     document.querySelector("#myAddress").innerText = myAddress;
@@ -65,5 +82,6 @@ function generate(){
     // company_name.innerText = company.value;
 
     document.title = "Cover Letter "+company.value+" "+job.value;
-    print();
+    setTimeout(function(){print();}, 1000);
+    // print();
 }
