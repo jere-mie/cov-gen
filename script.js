@@ -65,8 +65,8 @@ function generate(){
 
     let content = document.querySelector("#cltext");
     content.innerHTML = "";
-    cltext = cltext.replace(`{{job}}`, job.value);
-    cltext = cltext.replace(`{{company}}`, company.value);
+    cltext = cltext.replaceAll(`{{job}}`, job.value);
+    cltext = cltext.replaceAll(`{{company}}`, company.value);
     let paragraphs = cltext.split('\n');
     for(let i=0; i<paragraphs.length; i++){
         if (paragraphs[i] == "")
