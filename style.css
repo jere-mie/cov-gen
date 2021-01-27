@@ -36,6 +36,11 @@ hr{
     width: 80%;
 }
 
+#cltext{
+    text-align: justify;
+    text-justify: inter-word;
+}
+
 @media print{
     .noprint{
         display: none;
